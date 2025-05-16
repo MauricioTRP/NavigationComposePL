@@ -7,11 +7,12 @@ import androidx.compose.ui.Modifier
 import com.example.navigationlab.data.Product
 import com.example.navigationlab.viewmodel.ProductsViewModel
 import androidx.compose.runtime.getValue
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.navigationlab.ui.components.ProductCard
 
 @Composable
 fun ProductDetailsScreen(
-    viewModel: ProductsViewModel,
+    viewModel: ProductsViewModel = hiltViewModel(),
     productId: Int
 ) {
     val productUiState by viewModel.productUiState.collectAsState()

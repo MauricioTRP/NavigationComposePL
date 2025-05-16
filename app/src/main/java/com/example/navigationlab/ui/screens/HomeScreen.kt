@@ -10,10 +10,11 @@ import com.example.navigationlab.data.Product
 import com.example.navigationlab.ui.components.ProductsList
 import com.example.navigationlab.viewmodel.ProductsViewModel
 import androidx.compose.runtime.getValue
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun HomeScreen(
-    productsViewModel: ProductsViewModel,
+    productsViewModel: ProductsViewModel = hiltViewModel(),
     onProductClick: (Product) -> Unit
 ) {
     val productsUiState by productsViewModel.productsUiState.collectAsState()

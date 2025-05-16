@@ -12,7 +12,11 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class LocalStoreDataModule {
+abstract class Module {
+    @Binds
+    @Singleton
+    abstract fun bindProductsRepository(productsRepositoryImpl: ProductsRepositoryImpl): ProductsRepository
+
     @Binds
     @Singleton
     abstract fun bindLocalStoreDataProvider(
